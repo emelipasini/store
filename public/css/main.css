@@ -1,0 +1,124 @@
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap');
+
+/* Variables */
+:root {
+    --transparent: #00000000;
+    --white: #fff;
+    --white-gray: #e1e6e6;
+    --gray: #5e5c5c;
+    --blue-green: #11A49B;
+    --green-blue: #90FC8E;
+    --blue: #1259c3;
+    --green: #39b54a;
+    --red: #db1f28;
+}
+
+/* Basico */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    font-size: 1em;
+    font-weight: 300;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: inherit;
+    color: inherit;
+}
+img {
+    width: 100%;
+}
+input {
+    font-family: inherit;
+}
+
+/* Header */
+header {
+    color: var(--white);
+    padding: 10px;
+    background: var(--blue-green);
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(45deg, var(--blue-green), var(--green-blue));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(45deg, var(--blue-green), var(--green-blue));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.main-header {
+    width: 100%;
+}
+.logo {
+    display: inline-block;
+    font-size: 2.5em;
+}
+form.search {
+    position: relative;
+    display: flex;
+}
+input.search {
+    width: 100%;
+    border: solid 1px var(--white-gray);
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 7px;
+}
+button.search {
+    background-color: var(--white);
+    border: solid 1px var(--white-gray);
+    border-left: none;
+    color: var(--gray);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    cursor: pointer;
+}
+header a {
+    width: 100%;
+}
+#collapseExample, nav {
+    width: 100%;
+}
+header ul, footer ul {
+    text-align: center;
+}
+header li, footer li {
+    padding-right: 0;
+    padding-left: 0;
+    font-weight: bold;
+}
+.links-button {
+    background-color: var(--transparent);
+    border: 1px solid var(--white);
+    color: var(--white);
+}
+
+/* Principal */
+main {
+    background-color: var(--white-gray);
+    padding: 4%;
+}
+
+/* Footer */
+footer {
+    color: var(--white);
+    padding: 10px;
+    background: var(--blue-green);
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(45deg, var(--blue-green), var(--green-blue));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(45deg, var(--blue-green), var(--green-blue));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+footer nav {
+    width: 100%;
+}

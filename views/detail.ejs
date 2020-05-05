@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- Head -->
+    <% title = product.name %>
+    <% page = "product" %>
+    <%- include("./partials/head") -%>
+    <!-- /Head -->
+
+    <body>
+        <!-- Header -->
+        <%- include("./partials/header") -%>
+        <!-- /Header -->
+
+        <main>
+            <div class="container">
+                <div class="row">
+                    <h2 class="title">Detalle del producto: <%= product.name %></h2>
+                    <section class="mb-5">
+                        <article class="col-11 col-lg-8">
+                            <img src="/img/products/<%= product.image %>" alt="">
+                            <p><%= product.description %></p>
+                        </article>
+                        <aside class="col-12 col-lg-4">
+                            <h2 class="pt-5 productTitle"><%= product.name %></h2>
+                            <% if(product.discount !== 0) {
+                                let discount = (product.price * product.discount) / 100
+                                let finalPrice = Math.round(product.price - discount)
+                            %>
+                                <span class="oldPrice">$<%= toThousands(product.price) %></span>
+                                <span class="discount">/ <%= product.discount %>% OFF</span>
+                                <p class="price my-4">$<%= toThousands(finalPrice) %></p>
+                            <% } else {%>
+                                <p class="price my-4">$<%= toThousands(product.price) %></p>
+                            <% } %>                            
+                            <div class="py-4">
+                                <i class="fas fa-credit-card"></i>
+                                Pagá en 12 cuotas sin interés
+                            </div>
+                            <div class="py-4">
+                                <i class="fas fa-store"></i>
+                                Retiro gratis en locales del vendedor
+                            </div>
+                            <form class="pt-5 pb-3" action="">
+                                <button type="submit" class="change green-button">Comprar</button>
+                            </form>
+                            <div class="d-flex justify-content-around w-100">
+                                <form class="d-flex justify-content-around modify-form py-3 pr-1" action="/producto/<%= product.id %>/editar" method="GET">
+                                    <button type="submit" class="change red-button">Modificar</button>
+                                </form>
+                                <form class="d-flex justify-content-around modify-form py-3 pl-1" action="/producto/<%= product.id %>/eliminar?_method=DELETE" method="POST">
+                                    <button type="submit" class="change red-button">Eliminar</button>
+                                </form>
+                            </div>
+                        </aside>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <%- include("./partials/footer") -%>
+        <!-- /Footer -->
+    </body>
+</html>

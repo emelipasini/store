@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+	<% title = "Mercado Liebre" %>
+	<% page = "product" %>
+	<!-- Head -->
+	<%- include("./partials/head") -%>
+	<body>
+		<!-- Header -->
+		<%- include('./partials/header') %>
+		<!-- /Header -->
+
+		<main>
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="title">Formulario de creación de productos</h2>
+					</div>
+				</div>
+				<div class="col-12">
+					<form action="/producto/crear" method="post">
+						<div class="row product-detail">
+							<div class="col-12">
+								<label for="name" class="form-label">Nombre del producto:</label>
+								<input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="form-input">
+							</div>
+							<div class="col-12 col-md-6">
+								<label for="price" class="form-label">Precio del producto:</label>
+								<input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input">
+							</div>
+							<div class="col-12 col-md-6">
+								<label for="discount" class="form-label">Descuento:</label>
+								<input type="text" id="discount" name="discount" placeholder="Ej: 15" class="form-input">
+							</div>
+							<div class="col-12">
+								<label for="description" class="form-label">Descipción:</label>
+								<textarea name="description" id="description" class="form-input"></textarea>
+							</div>
+							<div class="col-12 modify my-3">
+								<button type="submit" class="change green-button">Guardar producto</button>
+							</div>
+						</div>
+					</form>
+				</div>
+	
+			</div>
+			<!-- /todos los productos -->
+		</main>
+
+		<!-- footer -->
+		<%- include('./partials/footer') %>
+		<!-- /footer -->
+	</body>	
+</html>

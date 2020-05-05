@@ -1,0 +1,96 @@
+/* ===== DETALLE DEL PRODUCTO ===== */
+/* Principal */
+.title {
+    color: var(--gray);
+    font-size: 2em;
+    font-family: "Raleway";
+}
+section {
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.change {
+    color: white;
+    border-radius: 5px;
+    padding: 15px;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Aside */
+.productTitle {
+    font-size: 1.7em;
+}
+.oldPrice {
+    text-decoration: line-through;
+    font-size: 1.3em;;
+}
+.discount {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+.price {
+    font-size: 3em;
+}
+aside span, aside div i {
+    color: var(--green);
+}
+aside div {
+    font-size: 1.1em;
+    color: var(--gray);
+}
+.modify-form {
+    width: 100%;
+}
+
+/*====== FORMULARIOS DE EDITAR Y CREAR ======*/
+.product-detail {
+    background-color: var(--white);
+}
+.form-label {
+    display: inline-block;
+    font-size: 1.6em;
+    margin: 10px 0;
+}
+.form-input {
+    display: block;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    border-radius: 8px;
+    border: none;
+    border: solid 1px var(--gray);
+    padding: 0 15px;
+    background-color: var(--white);
+    color: var(--gray);
+}
+textarea.form-input {
+    min-height: 140px;
+    resize: vertical;
+    padding: 15px;
+    background-color: var(--white);
+    border: solid 1px var(--gray);
+    font-family: inherit;
+}
+.red-button {
+    background-color: #ed5564;
+}
+.green-button {
+    background-color: #42cb6f;
+}
+
+/* == Detalle del producto == */
+/* Media querys */
+@media (min-width: 1024px) {
+    article {
+        border-right: 1px solid var(--white-gray);
+    }
+    aside {
+        border-left: 1px solid var(--white-gray);
+    }
+}
