@@ -1,6 +1,19 @@
 const express = require("express");
 const router = express.Router();
 const productsController = require("../controllers/products");
+const multer = require("multer");
+const path = require("path");
+
+// Configuracion para subida de archivos
+let storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "public/img/products");
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname));
+    }
+});
+let upload = multer({ storage: storage });
 
 // GET
 // pagina principal
@@ -14,7 +27,7 @@ router.get("/:id/editar", productsController.edit);
 
 // POST
 // crea un producto
-router.post("/crear", productsController.save);
+router.post("/crear", upload.any(), productsController.save);
 
 // PUT
 // modifica un producto

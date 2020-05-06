@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-	<% title = "Mercado Liebre" %>
+	<% title = "Creacion de producto" %>
 	<% page = "product" %>
 	<!-- Head -->
 	<%- include("./partials/head") -%>
@@ -17,9 +17,9 @@
 					</div>
 				</div>
 				<div class="col-12">
-					<form action="/producto/crear" method="post">
+					<form action="/producto/crear" method="post" enctype="multipart/form-data">
 						<div class="row product-detail">
-							<div class="col-12">
+							<div class="col-12 col-md-6">
 								<label for="name" class="form-label">Nombre del producto:</label>
 								<input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="form-input">
 							</div>
@@ -30,6 +30,10 @@
 							<div class="col-12 col-md-6">
 								<label for="discount" class="form-label">Descuento:</label>
 								<input type="text" id="discount" name="discount" placeholder="Ej: 15" class="form-input">
+							</div>
+							<div class="col-12 col-md-6">
+								<label for="image" class="form-label">Imagen:</label>
+								<input type="file" id="image" name="image" class="form-input no-border">
 							</div>
 							<div class="col-12">
 								<label for="description" class="form-label">Descipción:</label>

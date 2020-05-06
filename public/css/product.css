@@ -69,6 +69,9 @@ aside div {
     background-color: var(--white);
     color: var(--gray);
 }
+.no-border {
+    border: none;
+}
 textarea.form-input {
     min-height: 140px;
     resize: vertical;
@@ -78,10 +81,10 @@ textarea.form-input {
     font-family: inherit;
 }
 .red-button {
-    background-color: #ed5564;
+    background-color: var(--red-button);
 }
 .green-button {
-    background-color: #42cb6f;
+    background-color: var(--green-button);
 }
 
 /* == Detalle del producto == */

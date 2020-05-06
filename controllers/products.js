@@ -1,5 +1,6 @@
 let products = require("../data/productsDataBase.json");
 const fs = require("fs");
+const sharp = require("sharp");
 
 const productController = {
     // Funciones de rutas
@@ -14,16 +15,18 @@ const productController = {
     create: function (req, res) {
         res.render("product-create-form");
     },
-    save: function (req, res) {
+    save: function (req, res, next) {
         // esto guarda el producto en la db
         let lastId = products[products.length - 1].id;
+
         products.push(
             {
                 "id": lastId + 1,
                 "name": req.body.name,
+                "description": req.body.description,
                 "price": req.body.price,
                 "discount": req.body.discount,
-                "description": req.body.description
+                "image": req.files[0].filename
             }
         );
         fs.writeFileSync("./data/productsDataBase.json", JSON.stringify(products));
@@ -68,6 +71,13 @@ const productController = {
     // Otras funciones
     toThousands: function (n) {
         return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    },
+    resize: function (img) {
+        sharp(req.file).resize(800, 800).toBuffer(function (err, buf) {
+            if (err) return next(err)
+
+            // Do whatever you want with `buf`
+        })
     }
 }
 

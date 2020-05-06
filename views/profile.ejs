@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- Head -->
+    <% title = "Mi perfil" %>
+    <% page = "product" %>
+    <%- include("./partials/head") -%>
+    <!-- /Head -->
+    <body>
+        <!-- Header -->
+        <%- include("./partials/header") -%>
+        <!-- /Header -->
+
+        <main class="page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="title">Nombre Apellido</h2>
+                    </div>
+                    <div class="col-12">
+                        <h3>Mis compras:</h3>
+                        <p>Batidora</p>
+                        <p>Secador de pelo</p>
+                        <p>Billetera</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <%- include("./partials/footer") -%>
+        <!-- /Footer -->
+    </body>
+</html>

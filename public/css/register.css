@@ -1,0 +1,35 @@
+/* =====REGISTRO===== */
+.title {
+    font-family: "Raleway";
+    color: var(--gray);
+    font-size: 2em;
+}
+.box {
+    background-color: var(--white);
+}
+.item {
+    font-size: 1.3em;
+}
+.item label {
+    font-family: "Raleway";
+}
+.item input {
+    border: solid 1px var(--gray);
+    border-radius: 3px;
+    padding: 7px;
+}
+.item button {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    background-color: var(--green-button);
+    color: var(--white);
+    font-weight: bold;
+}
+
+/* =====LOGIN===== */
+/* .page {
+    height: 82vh;
+} */
