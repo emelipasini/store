@@ -16,16 +16,33 @@
                     <div class="col-12">
                         <h2 class="title">Bienvenido/a</h2>
                     </div>
+                    <% if(typeof errors !== "undefined") { %>
+                        <div class="col-12">
+                            <ul>
+                                <% for(let error of errors) { %>
+                                    <li><%= error.msg %></li>
+                                <% } %>
+                            </ul>
+                        </div>
+                    <% } %>
                     <div class="col-12 col-md-8 mx-auto my-5">
                         <form action="/usuario/ingresar" method="post">
                             <div class="box p-4">
                                 <div class="mb-3 item">
                                     <label class="col-12" for="email">Correo</label>
-                                    <input class="col-12" type="email" id="email" name="email">
+                                    <% if(typeof data !== "undefined") { %>
+                                        <input class="col-12" type="email" id="email" name="email" value="<%= data.email %>">
+                                    <% } else { %>
+                                        <input class="col-12" type="email" id="email" name="email">
+                                    <% } %>
                                 </div>
                                 <div class="mb-3 item">
                                     <label class="col-12" for="password">Contraseña</label>
                                     <input class="col-12" type="password" id="password" name="password">
+                                </div>
+                                <div class="mb-3 item">
+                                    <input type="checkbox" name="remember" id="remember">
+                                    <label for="remember">Mantener sesión</label>
                                 </div>
                                 <div class="item">
                                     <button type="submit">Ingresar</button>
