@@ -27,11 +27,17 @@
                             <span class="m-1" aria-hidden="true">|</span>
                             <li class="m-1"><a href="">Tiendas Oficiales</a></li>
                         </ul>
-                        <ul class="d-flex justify-content-around">
-                            <li class="m-1"><a href="/usuario/registro">Creá tu cuenta</a></li>
-                            <span class="m-1" aria-hidden="true">|</span>
-                            <li class="m-1"><a href="/usuario/ingresar">Ingresá</a></li>
-                        </ul>
+                        <% if(typeof req !== "undefined") { %>
+                            <ul class="d-flex justify-content-around">
+                                <li><a href="/usuario/perfil">Mi perfil</a></li>
+                            </ul>
+                        <% } else { %>
+                            <ul class="d-flex justify-content-around">
+                                <li class="m-1"><a href="/usuario/registro">Creá tu cuenta</a></li>
+                                <span class="m-1" aria-hidden="true">|</span>
+                                <li class="m-1"><a href="/usuario/ingresar">Ingresá</a></li>
+                            </ul>
+                        <% } %>
                     </nav>
                 </div>
 

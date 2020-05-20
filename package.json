@@ -1,15 +1,16 @@
 {
-  "name": "gem-store",
+  "name": "store",
   "version": "1.0.0",
   "private": true,
-  "description": "Ecommerce con fines simplemente demostrativos",
+  "description": "Ecommerce hecho para entender mejor Nodejs ",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon -e js,ejs ./bin/www"
+    "start": "node ./bin/www",
+    "startdev": "nodemon -e js,ejs ./bin/www"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emelipasini/gem-store.git"
+    "url": "git+https://github.com/emelipasini/store.git"
   },
   "keywords": [
     "Ecommerce"
@@ -17,9 +18,9 @@
   "author": "Emeli Pasini",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/emelipasini/gem-store/issues"
+    "url": "https://github.com/emelipasini/store/issues"
   },
-  "homepage": "https://github.com/emelipasini/gem-store#readme",
+  "homepage": "https://github.com/emelipasini/store#readme",
   "dependencies": {
     "bcrypt": "4.0.1",
     "cookie-parser": "1.4.4",
