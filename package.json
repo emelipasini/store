@@ -6,7 +6,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./bin/www",
-    "startdev": "nodemon -e js,ejs ./bin/www"
+    "dev": "nodemon -e js,ejs ./bin/www"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
 let users = require("../data/users.json");
 const fs = require("fs");
 const bcrypt = require("bcrypt");
-const { check, validationResult, body } = require("express-validator");
+const { validationResult } = require("express-validator");
 
 const userController = {
     create: function (req, res) {
@@ -9,18 +9,18 @@ const userController = {
     },
     save: function (req, res) {
         // Guarda el nuevo usuario en la db
+
+        // Trae los errores
         let errors = validationResult(req);
+
+        // Controla que el correo no se repita
+        users.forEach(user => {
+            if(user.email == req.body.email) {
+                errors.errors.push({ msg: "El usuario ya existe" })
+            }
+        });
+
         if(errors.isEmpty()) {
-            // Controla que el correo no se repita
-            users.forEach(user => {
-                if(user.email == req.body.email) {
-                    errors.errors.push({ msg: "El usuario ya existe" })
-                    // ========= ERROR =========
-                    // Vuelve a cargar el registro diciendo que el usuario ya existe
-                    // pero igualmente guarda el usuario en la db
-                    res.render("register", { errors: errors.errors });
-                }
-            });
             // Obtiene el id y hashea contraseña
             let lastId = users[users.length - 1].id;
             let password = bcrypt.hashSync(req.body.password, 10);
@@ -31,6 +31,7 @@ const userController = {
                 "surname": req.body.surname,
                 "email": req.body.email,
                 "password": password
+                // Para despues
                 // "avatar": req.files[0].filename
             }
             users.push(user);

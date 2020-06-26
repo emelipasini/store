@@ -1,6 +1,7 @@
 consignas/
 data/
 img/
+middlewares/
 
 # Logs
 logs

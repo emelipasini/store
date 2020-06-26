@@ -1,9 +1,9 @@
 # Store
 
-Ecommerce hecho para entender mejor Nodejs
+Ecommerce en estado de desarrollo hecho con Node y Express
 
 # Comandos
 ```bash
 npm install
-npm run startdev
+npm start
 ```

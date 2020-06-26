@@ -29,11 +29,11 @@
                                         %>
                                             <div class="justify-content-between">
                                                 <h2 class="product-title">$<%= toThousands(finalPrice) %></h2>
-                                                <p class="py-0">- <%= product.discount %>%<br><span><%= toThousands(product.price) %></span></p>
+                                                <p class="py-0 m-1">- <%= product.discount %>%<br><span><%= toThousands(product.price) %></span></p>
                                             </div>
                                         <% } else { %>
                                             <div class="justify-content-between">
-                                                <h2 class="product-title">$<%= toThousands(product.price) %></h2>
+                                                <h2 class="product-title p-2">$<%= toThousands(product.price) %></h2>
                                             </div>
                                         <% } %>
                                     </article>

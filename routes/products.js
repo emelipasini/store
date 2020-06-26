@@ -18,10 +18,10 @@ let upload = multer({ storage: storage });
 // GET
 // pagina principal
 router.get("/", productsController.index);
-// detalle del producto
-router.get("/:id/detalle", productsController.detail);
 // renderiza el formulario para crear un producto
 router.get("/crear", productsController.create);
+// detalle del producto
+router.get("/:id/detalle", productsController.detail);
 // renderiza el formulario para editar un producto
 router.get("/:id/editar", productsController.edit);
 
